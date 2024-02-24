@@ -10,7 +10,7 @@ echo -e "\E[44;1;37m    INSTALL CHECKUSER ANYVPN     \E[0m"
 echo ""
 echo -e "                 \033[1;31mBy t.me/mrdarkbd\033[1;36m"
 echo ""
-echo -ne "\n\033[1;32mDE UM ENTER PARA \033[1;33mCONTINUE...\033[1;37m: "; read -r
+echo -ne "\n\033[1;32mFROM AN ENTER TO \033[1;33mCONTINUE...\033[1;37m: "; read -r
 clear
 echo -e "\n\033[1;36mSTARTING INSTALLATION \033[1;33mWAIT..."
 apt-get install figlet -y > /dev/null 2>&1

@@ -57,7 +57,7 @@ fun_chuser() {
 clear
 echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\E[44;1;37m          MANAGE CHECKUSER            \E[0m"
-echo -e "\E[44;1;37mVERSÃO 1.6                By @MRDARKBD\E[0m"
+echo -e "\E[44;1;37mVersion 1.6                By @MRDARKBD\E[0m"
 echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
 [[ $(netstat -nplt | grep -wc 'python3') != '0' ]] && {
@@ -76,8 +76,8 @@ sks='\033[1;31mOFF'
 [[ $(screen -list | grep -wc 'checkgestor') != '0' ]] && var_check="\033[1;31mDESATIVAR" || var_check="\033[1;32mATIVAR"
 echo ""
 echo -e "\033[1;31m[\033[1;36m1\033[1;31m] \033[1;37m• $var_check CHECKUSER \033[0m"
-echo -e "\033[1;31m[\033[1;36m2\033[1;31m] \033[1;37m• \033[1;31mREMOVER\033[0m"
-echo -e "\033[1;31m[\033[1;36m0\033[1;31m] \033[1;37m• \033[1;33mVOLTAR\033[0m"
+echo -e "\033[1;31m[\033[1;36m2\033[1;31m] \033[1;37m• \033[1;31mREMOVE\033[0m"
+echo -e "\033[1;31m[\033[1;36m0\033[1;31m] \033[1;37m• \033[1;33mBACK\033[0m"
 echo ""
 echo -ne "\033[1;33mWHAT DO YOU WANT TO DO \033[1;33m?\033[1;37m: "
 read resposta
@@ -138,7 +138,7 @@ fi
 elif [[ "$resposta" = '2' ]]; then
 echo ""
 echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\033[1;31m     • \033[1;31mDESEJA REMOVER O CHECKUSER?\033[1;31m •     \033[0m"
+echo -e "\033[1;31m     • \033[1;31mWANT TO REMOVE CHECKUSER?\033[1;31m •     \033[0m"
 echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -ne "\033[1;33mCONTINUAR? [S/n]: \033[1;33m?:\033[1;37m "
 read opcion
@@ -156,12 +156,12 @@ screen -wipe >/dev/null
 }
 fun_bar 'fun_socksoff'
 echo ""
-echo -e "\033[1;31mCHECKUSER REMOVIDO COM SUCESSO!!!\033[1;33m"
+echo -e "\033[1;31mCHECKUSER SUCCESSFULLY REMOVED!!!\033[1;33m"
 sleep 2
 rm -rf /bin/chall /bin/checkgestor /usr/lib/checkgestor /etc/licencec > /dev/null 2>&1
 echo ""
 echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "   \033[1;32m • \033[1;32mVOCÊ DESEJA INSTALAR NOVAMENTE!\033[1;32m • \033[0m"
+echo -e "   \033[1;32m • \033[1;32mYOU WANT TO INSTALL AGAIN!\033[1;32m • \033[0m"
 echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -ne "\033[1;33mCONTINUAR? [S/n]: \033[1;33m?:\033[1;37m "
 read opcion2
@@ -182,4 +182,4 @@ fun_chuser
 fi
 }
 fun_chuser
-} || clear && echo -e "\E[41;1;37m         VOCÊ NÃO TEM PERMISSÃO!!!       \E[0m" && sleep 4 && exit 0
+} || clear && echo -e "\E[41;1;37m         YOU DO NOT HAVE PERMISSION!!!       \E[0m" && sleep 4 && exit 0
