@@ -6,7 +6,7 @@ verif_ptrs() {
 		for pton in $(echo -e "$PT" | cut -d: -f2 | cut -d' ' -f1 | uniq); do
 			svcs=$(echo -e "$PT" | grep -w "$pton" | awk '{print $1}' | uniq)
 			[[ "$porta" = "$pton" ]] && {
-				echo -e "\n\033[1;31mPORTA \033[1;33m$porta \033[1;31mEM USO PELO \033[1;37m$svcs\033[0m"
+				echo -e "\n\033[1;31mPORT \033[1;33m$porta \033[1;31mIN USE BY \033[1;37m$svcs\033[0m"
 				sleep 3
 				fun_userany
 			}
@@ -22,7 +22,7 @@ fun_bar() {
 			touch $HOME/fim
 		) >/dev/null 2>&1 &
 		tput civis
-		echo -ne "\033[1;33mAGUARDE \033[1;37m- \033[1;33m["
+		echo -ne "\033[1;33mWAIT \033[1;37m- \033[1;33m["
 		while true; do
 			for ((i = 0; i < 18; i++)); do
 				echo -ne "\033[1;31m#"
@@ -33,7 +33,7 @@ fun_bar() {
 			sleep 1s
 			tput cuu1
 			tput dl1
-			echo -ne "\033[1;33mAGUARDE \033[1;37m- \033[1;33m["
+			echo -ne "\033[1;33mWAIT \033[1;37m- \033[1;33m["
 		done
 		echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
 		tput cnorm
@@ -43,7 +43,7 @@ fun_userany() {
     clear
 echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
-    echo -e "\E[44;1;37m       GERENCIAR CHECKUSER ANYVPN        \E[0m"
+    echo -e "\E[44;1;37m       MANAGE CHECKUSER ANYVPN        \E[0m"
 echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
     [[ $(screen -list | grep -wc 'checkuserany') != '0' ]] && {
@@ -56,9 +56,9 @@ echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━�
 		}
     echo ""
 	[[ $(screen -list | grep -wc 'checkuserany') != '0' ]] && {
-	echo -e "\033[1;31m[\033[1;36m1\033[1;31m] \033[1;37m• \033[1;31mDESATIVAR CHECKUSER\033[0m"
+	echo -e "\033[1;31m[\033[1;36m1\033[1;31m] \033[1;37m• \033[1;31mDISABLE CHECKUSER\033[0m"
 	} || {
-    echo -e "\033[1;31m[\033[1;36m1\033[1;31m] \033[1;37m• \033[1;32mATIVAR CHECKUSER\033[0m"
+    echo -e "\033[1;31m[\033[1;36m1\033[1;31m] \033[1;37m• \033[1;32mACTIVATE CHECKUSER\033[0m"
 	}
     echo -e "\033[1;31m[\033[1;36m0\033[1;31m] \033[1;37m• \033[1;33mVOLTAR\033[0m"
     echo ""
@@ -79,22 +79,22 @@ echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━�
 					sleep 1
 					screen -wipe >/dev/null
 				}
-				echo -e "\033[1;32mDESATIVANDO CHECKUSER ANYVPN...\033[1;33m"
+				echo -e "\033[1;32mDEACTIVING CHECKUSER ANYVPN...\033[1;33m"
 				echo ""
 				fun_bar 'fun_socksoff'
 				echo ""
-				echo -e "\033[1;32mCHECKUSER ANYVPN DESATIVADO!\033[1;33m"
+				echo -e "\033[1;32mCHECKUSER ANYVPN DISABLED!\033[1;33m"
 				sleep 3
 				fun_userany
 			else
 				clear
 				echo -e "\E[44;1;37m             CHECKUSER ANYVPN             \E[0m"
 				echo ""
-				echo -ne "\033[1;32mQUAL PORTA DESEJA ULTILIZAR? \033[1;33m?\033[1;37m: "
+				echo -ne "\033[1;32mWHICH PORT DO YOU WANT TO USE? \033[1;33m?\033[1;37m: "
 				read porta
 				[[ -z "$porta" ]] && {
 					echo ""
-					echo -e "\033[1;31mPorta inválida!"
+					echo -e "\033[1;31mInvalid port!"
 					sleep 3
 					clear
 					fun_userany
@@ -113,23 +113,23 @@ echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━�
 					}
 				}
 				echo ""
-				echo -e "\033[1;32mINICIANDO O CHECKUSER ANYVPN...\033[1;33m"
+				echo -e "\033[1;32mSTARTING THE ANYVPN CHECKUSER...\033[1;33m"
 				echo ""
 				fun_bar 'fun_inisocks'
 				echo ""
-				echo -e "\033[1;32mCHECKUSER ANYVPN ATIVADO!\033[1;33m"
+				echo -e "\033[1;32mCHECKUSER ANYVPN ACTIVATED!\033[1;33m"
 				sleep 3
 				fun_userany
 			fi
    elif [[ "$resposta" = '0' ]]; then
         echo ""
-        echo -e "\033[1;31mSaindo...\033[0m"
+        echo -e "\033[1;31mLeaving...\033[0m"
         sleep 1
 		clear
         exit
     else
         echo ""
-        echo -e "\033[1;31mOpção inválida!\033[0m"
+        echo -e "\033[1;31mInvalid option!\033[0m"
         sleep 1
         fun_userany
     fi
