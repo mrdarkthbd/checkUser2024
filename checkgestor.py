@@ -17,7 +17,7 @@ def run_command(username: str, action: int) -> t.Optional[str]:
         final = result[0].strip()
         return final
     except Exception as e:
-        print(f"Erro ao executar comando para {username}: {e}")
+        print(f"Error executing command for {username}: {e}")
         return None
 
 
@@ -75,7 +75,7 @@ def c4g():
             return jsonify({'error': str(e)})
     else:
         try:
-            return 'Por favor, use o metodo de requisição correto ! \n\n Checkuser CONECTA4G'
+            return 'Please use the correct request method ! \n\n Checkuser DARKBDTUNNEL'
         except Exception as e:
             return jsonify({'error': str(e)})
 
@@ -105,7 +105,7 @@ def gl(username):
             return jsonify({'error': str(e)})
     else:
         try:
-            return 'Por favor, use o método de requisição correto! \n\n Checkuser GL'
+            return 'Please use the correct request method! \n\n Checkuser GL'
         except Exception as e:
             return jsonify({'error': str(e)})
 
@@ -143,7 +143,7 @@ def anymod():
             return jsonify({'error': str(e)})
     else:
         try:
-            return 'Por favor, use o método de requisição correto! \n\n Checkuser ANY VPN MOD'
+            return 'Please use the correct request method! \n\n Checkuser ANY VPN MOD'
         except Exception as e:
             return jsonify({'error': str(e)})
 

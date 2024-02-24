@@ -60,9 +60,9 @@ echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━�
 	} || {
     echo -e "\033[1;31m[\033[1;36m1\033[1;31m] \033[1;37m• \033[1;32mACTIVATE CHECKUSER\033[0m"
 	}
-    echo -e "\033[1;31m[\033[1;36m0\033[1;31m] \033[1;37m• \033[1;33mVOLTAR\033[0m"
+    echo -e "\033[1;31m[\033[1;36m0\033[1;31m] \033[1;37m• \033[1;33mBACK\033[0m"
     echo ""
-    echo -ne "\033[1;32mO QUE DESEJA FAZER \033[1;33m?\033[1;37m "
+    echo -ne "\033[1;32mWHAT DO YOU WANT TO DO \033[1;33m?\033[1;37m "
     read resposta
     if [[ "$resposta" = '1' ]]; then
 	if ps x | grep -w checkuserany | grep -v grep 1>/dev/null 2>/dev/null; then

@@ -1,5 +1,5 @@
 #!/bin/bash
-[[ $(awk -F" " '{print $2}' /etc/licencec/telegram) == "@nandoslayer" ]] && {
+[[ $(awk -F" " '{print $2}' /etc/licencec/telegram) == "@mrdarkthbd" ]] && {
 IP=$(wget -qO- ipv4.icanhazip.com)
 verif_ptrs() {
 porta=$1
@@ -62,7 +62,7 @@ echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━�
 echo ""
 [[ $(netstat -nplt | grep -wc 'python3') != '0' ]] && {
 sks='\033[1;32mON'
-echo -e "\033[1;35mLink CONECTA4G \033[1;37mhttp://$IP:$(netstat -nplt | grep 'python3' | awk {'print $4'} | cut -d: -f2 | xargs)/checkUser"
+echo -e "\033[1;35mLink DARKBDTUNNEL \033[1;37mhttp://$IP:$(netstat -nplt | grep 'python3' | awk {'print $4'} | cut -d: -f2 | xargs)/checkUser"
 echo ""
 echo -e "\033[1;33mLink DTUNELL MOD http://$IP\033[1;37m:\033[1;32m$(netstat -nplt | grep 'python3' | awk {'print $4'} | cut -d: -f2 | xargs)"
 echo ""
@@ -73,7 +73,7 @@ echo ""
 } || {
 sks='\033[1;31mOFF'
 }
-[[ $(screen -list | grep -wc 'checkgestor') != '0' ]] && var_check="\033[1;31mDESATIVAR" || var_check="\033[1;32mATIVAR"
+[[ $(screen -list | grep -wc 'checkgestor') != '0' ]] && var_check="\033[1;31mDISABLE" || var_check="\033[1;32mACTIVATE"
 echo ""
 echo -e "\033[1;31m[\033[1;36m1\033[1;31m] \033[1;37m• $var_check CHECKUSER \033[0m"
 echo -e "\033[1;31m[\033[1;36m2\033[1;31m] \033[1;37m• \033[1;31mREMOVE\033[0m"
@@ -140,7 +140,7 @@ echo ""
 echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\033[1;31m     • \033[1;31mWANT TO REMOVE CHECKUSER?\033[1;31m •     \033[0m"
 echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -ne "\033[1;33mCONTINUAR? [S/n]: \033[1;33m?:\033[1;37m "
+echo -ne "\033[1;33mCONTINUE? [S/n]: \033[1;33m?:\033[1;37m "
 read opcion
 [[ "$opcion" != @(s|S) ]] && stop_install
 echo ""
@@ -163,20 +163,20 @@ echo ""
 echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "   \033[1;32m • \033[1;32mYOU WANT TO INSTALL AGAIN!\033[1;32m • \033[0m"
 echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -ne "\033[1;33mCONTINUAR? [S/n]: \033[1;33m?:\033[1;37m "
+echo -ne "\033[1;33mCONTINUE? [S/n]: \033[1;33m?:\033[1;37m "
 read opcion2
 [[ "$opcion2" != @(s|S) ]] && stop_install2
 bash <(wget -qO- https://raw.githubusercontent.com/mrdarkthbd/checkUser2024/main/instcheck.sh)
 exit 0
 elif [[ "$resposta" = '0' ]]; then
 echo ""
-echo -e "\033[1;31mSaindo...\033[0m"
+echo -e "\033[1;31mLeaving...\033[0m"
 sleep 1
 clear
 exit
 else
 echo ""
-echo -e "\033[1;31mOpção inválida!\033[0m"
+echo -e "\033[1;31mInvalid option!\033[0m"
 sleep 1
 fun_chuser
 fi
